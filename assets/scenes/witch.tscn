@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cxg7jpmos6cnr"]
+
+[ext_resource type="Script" uid="uid://d17gdmydtnelf" path="res://character_body_2d.gd" id="1_1xrp3"]
+[ext_resource type="Texture2D" uid="uid://bgx8ytqp0spar" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle1.png" id="2_x78ka"]
+[ext_resource type="Texture2D" uid="uid://u6dv230tytnd" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle2.png" id="3_xg88p"]
+[ext_resource type="Texture2D" uid="uid://da5w0bc3hnr41" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle3.png" id="4_y4trq"]
+[ext_resource type="Texture2D" uid="uid://b6lds7fa106b1" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle4.png" id="5_fwpu4"]
+[ext_resource type="Texture2D" uid="uid://cmruh3uq1eehl" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle5.png" id="6_dfcgs"]
+[ext_resource type="Texture2D" uid="uid://duprbbe00h341" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle6.png" id="7_rmwoj"]
+[ext_resource type="Texture2D" uid="uid://wxoifpj4fcua" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle7.png" id="8_opnh4"]
+[ext_resource type="Texture2D" uid="uid://c5r1rvt73wogq" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle8.png" id="9_jdpsx"]
+[ext_resource type="Texture2D" uid="uid://dv3y8gtgsf3wq" path="res://assets/img/chara/witch/EleonoreAndJoanna/Sprites/Eleonore/Idle/Idle9.png" id="10_yj83e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x78ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xg88p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y4trq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fwpu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dfcgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rmwoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_opnh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jdpsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yj83e")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="witch" type="CharacterBody2D" unique_id=1307937660]
+script = ExtResource("1_1xrp3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=524199839]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_wp5od")
+animation = &"idle"
+frame_progress = 0.46353146

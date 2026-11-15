@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bjp7gd65c1ofj"]
+
+[ext_resource type="FontFile" uid="uid://cb50t1uwxahnf" path="res://assets/font/Minecraft.ttf" id="1_uu6ob"]
+[ext_resource type="Script" uid="uid://b8owil76725xp" path="res://assets/scenes/main_menu.gd" id="1_v1ppo"]
+[ext_resource type="Texture2D" uid="uid://bprc2jqiupo1g" path="res://assets/img/chara/player/humanForm/craftpix-net-793515-free-tiny-schoolgirl-pixel-art-sprite-pack/Schoolgirl_1/Idle.png" id="3_v71do"]
+[ext_resource type="PackedScene" uid="uid://cxg7jpmos6cnr" path="res://assets/scenes/witch.tscn" id="4_57ux2"]
+[ext_resource type="Script" uid="uid://b114wwdhywwp2" path="res://assets/scenes/character_body_2d.gd" id="4_f2xsc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wp5od"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v71do"]
+atlas = ExtResource("3_v71do")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmmar"]
+atlas = ExtResource("3_v71do")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66en2"]
+atlas = ExtResource("3_v71do")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej4af"]
+atlas = ExtResource("3_v71do")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp4c4"]
+atlas = ExtResource("3_v71do")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uek13"]
+atlas = ExtResource("3_v71do")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k56px"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v71do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmmar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66en2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej4af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp4c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uek13")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="mainMenu" type="Control" unique_id=926622805]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1ppo")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1776804157]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_uu6ob")
+theme_override_font_sizes/font_size = 64
+text = "The CATcher"
+label_settings = SubResource("LabelSettings_wp5od")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Label" unique_id=681620158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 143.0
+offset_right = 37.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_uu6ob")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="witch" parent="." unique_id=1307937660 instance=ExtResource("4_57ux2")]
+position = Vector2(751, 485.00003)
+scale = Vector2(1.5, 1.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=909481519]
+script = ExtResource("4_f2xsc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1509086944]
+position = Vector2(451.00003, 394)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_k56px")
+animation = &"idle"
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_button_pressed"]
